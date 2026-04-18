@@ -1,5 +1,8 @@
 package com.mukulwaval.lox;
 
+import com.mukulwaval.lox.Expr.Assign;
+import com.mukulwaval.lox.Expr.Variable;
+
 class AstPrinter implements Expr.Visitor<String> {
     String print(Expr expr) {
         return expr.accept(this);
@@ -7,24 +10,44 @@ class AstPrinter implements Expr.Visitor<String> {
 
     @Override
     public String visitBinaryExpr(Expr.Binary expr) {
-        return parenthesize(expr.operator.lexeme, expr.left, expr.right);
+        // return parenthesize(expr.operator.lexeme, expr.left, expr.right);
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'visitVariableExpr'");
     }
 
     @Override
     public String visitGroupingExpr(Expr.Grouping expr) {
-        return parenthesize("group", expr.expression);
+        // return parenthesize("group", expr.expression);
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'visitVariableExpr'");
     }
 
     @Override
     public String visitLiteralExpr(Expr.Literal expr) {
-        if (expr.value == null)
-            return "nil";
-        return expr.value.toString();
+        // if (expr.value == null)
+        // return "nil";
+        // return expr.value.toString();
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'visitVariableExpr'");
     }
 
     @Override
     public String visitUnaryExpr(Expr.Unary expr) {
-        return parenthesize(expr.operator.lexeme, expr.right);
+        // return parenthesize(expr.operator.lexeme, expr.right);
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'visitVariableExpr'");
+    }
+
+    @Override
+    public String visitVariableExpr(Variable expr) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'visitVariableExpr'");
+    }
+
+    @Override
+    public String visitAssignExpr(Assign expr) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'visitAssignExpr'");
     }
 
     private String parenthesize(String name, Expr... exprs) {
